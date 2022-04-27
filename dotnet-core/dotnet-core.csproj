@@ -10,4 +10,30 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="obj\Debug\net5.0\dotnet-core.AssemblyInfoInputs.cache" />
+      <Content Include="obj\Debug\net5.0\dotnet-core.assets.cache" />
+      <Content Include="obj\Debug\net5.0\dotnet-core.csproj.AssemblyReference.cache" />
+      <Content Include="obj\Debug\net5.0\dotnet-core.csproj.CoreCompileInputs.cache" />
+      <Content Include="obj\Debug\net5.0\dotnet-core.dll" />
+      <Content Include="obj\Debug\net5.0\dotnet-core.GeneratedMSBuildEditorConfig.editorconfig" />
+      <Content Include="obj\Debug\net5.0\dotnet-core.genruntimeconfig.cache" />
+      <Content Include="obj\Debug\net5.0\dotnet-core.MvcApplicationPartsAssemblyInfo.cache" />
+      <Content Include="obj\Debug\net5.0\dotnet-core.pdb" />
+      <Content Include="obj\Debug\net5.0\dotnet-core.RazorTargetAssemblyInfo.cache" />
+      <Content Include="obj\dotnet-core.csproj.nuget.dgspec.json" />
+      <Content Include="obj\project.assets.json" />
+      <Content Include="obj\project.nuget.cache" />
+      <Content Include="obj\project.packagespec.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+      <Compile Include="obj\Debug\net5.0\dotnet-core.MvcApplicationPartsAssemblyInfo.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="obj\Debug\net5.0" />
+    </ItemGroup>
+
 </Project>
