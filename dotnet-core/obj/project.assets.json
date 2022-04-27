@@ -198,11 +198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/dotnet-core.csproj",
+      "projectUniqueName": "/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/dotnet-core.csproj",
       "projectName": "dotnet-core",
-      "projectPath": "/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/dotnet-core.csproj",
+      "projectPath": "/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/dotnet-core.csproj",
       "packagesPath": "/Users/jwilliams/.nuget/packages/",
-      "outputPath": "/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/obj/",
+      "outputPath": "/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/jwilliams/.nuget/NuGet/NuGet.Config"
