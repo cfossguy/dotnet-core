@@ -1,0 +1,10 @@
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/appsettings.Development.json
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/appsettings.json
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/dotnet-core.dll
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/dotnet-core.deps.json
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/dotnet-core.runtimeconfig.json
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/dotnet-core.pdb
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/Microsoft.OpenApi.dll
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/Swashbuckle.AspNetCore.Swagger.dll
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/jwilliams/PycharmProjects/grafana-labs-sandbox/dotnet-core/dotnet-core/bin/Release/net5.0/publish/Swashbuckle.AspNetCore.SwaggerUI.dll
