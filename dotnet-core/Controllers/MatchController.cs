@@ -31,7 +31,7 @@ namespace dotnet_core.Controllers
         [HttpGet] 
         public string Welcome()
         {
-            return "This is the Welcome action method...";
+            return "This is the Welcome action method..."
         }
         
         private string getMockResponse(int s) {
