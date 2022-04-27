@@ -25,15 +25,25 @@
       <Content Include="obj\project.assets.json" />
       <Content Include="obj\project.nuget.cache" />
       <Content Include="obj\project.packagespec.json" />
+      <Content Remove="obj\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Compile Include="obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
       <Compile Include="obj\Debug\net5.0\dotnet-core.MvcApplicationPartsAssemblyInfo.cs" />
+      <Compile Remove="obj\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="obj\Debug\net5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="obj\**" />
     </ItemGroup>
 
 </Project>
