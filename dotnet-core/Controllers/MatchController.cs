@@ -31,7 +31,7 @@ namespace dotnet_core.Controllers
         [HttpGet] 
         public string Helloworld()
         {
-            return "Helloworld-2.0...";
+            return "Helloworld-1.1...";
         }
         
         private string getMockResponse(int s) {

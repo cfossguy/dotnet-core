@@ -15,6 +15,7 @@ env:
   DEPLOYMENT_NAME: gke-dotnet-core # TODO: update to deployment name
   REPOSITORY: dotnet-core # TODO: update to Artifact Registry docker repository
   IMAGE: dotnet-core
+  RELEASE_VERSION: 1.1
 
 jobs:
   build:
@@ -45,8 +46,8 @@ jobs:
       run: |-
         cd dotnet-core 
         docker build -t dotnet-core:1.0 . --platform linux/amd64
-        docker tag dotnet-core:1.0 us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:1.0
-        docker push us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:1.0
+        docker tag dotnet-core:$RELEASE_VERSION us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:1.0
+        docker push us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:$RELEASE_VERSION
     - name: k8s Deploy
       run: |-
         gcloud container clusters get-credentials se-jwilliams --zone $GKE_ZONE --project $PROJECT_ID
