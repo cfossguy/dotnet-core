@@ -21,7 +21,7 @@ env:
   GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GAR_LOCATION: us-central1 # TODO: update region of the Artifact Registry
-  GKE_CLUSTER: development    # TODO: update to cluster name
+  GKE_CLUSTER: se-jwilliams    # TODO: update to cluster name
   GKE_ZONE: us-central1-c   # TODO: update to cluster zone
   DEPLOYMENT_NAME: gke-dotnet-core # TODO: update to deployment name
   REPOSITORY: dotnet-core # TODO: update to Artifact Registry docker repository
