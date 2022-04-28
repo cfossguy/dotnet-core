@@ -1,4 +1,4 @@
-name: .NET
+name: .NET Core Delivery Pipeline
 
 on:
   push:
@@ -43,4 +43,4 @@ jobs:
         echo $GCP_CREDENTIALS | docker login -u _json_key --password-stdin https://$GAR_LOCATION-docker.pkg.dev      
     - name: Build Docker Image
       run: |-
-        docker build -t dotnet-core:1.0 . --platform linux/amd64;
+        cd dotnet-core; docker build -t dotnet-core:1.0 . --platform linux/amd64;
