@@ -19,7 +19,7 @@ namespace dotnet_core.Controllers
             _logger = logger;
         }
 
-        [Route("Fast")] 
+        [Route("fast")] 
         [HttpGet] 
         public string Fast(int k)
         {
@@ -27,11 +27,11 @@ namespace dotnet_core.Controllers
             return getMockResponse(k);
         }
         
-        [Route("HelloWorld/Welcome")] 
+        [Route("helloworld")] 
         [HttpGet] 
-        public string Welcome()
+        public string Helloworld()
         {
-            return "This is the Welcome action method...";
+            return "Helloworld...";
         }
         
         private string getMockResponse(int s) {
