@@ -24,3 +24,9 @@ jobs:
         run: dotnet test --no-restore --verbosity normal
       - name: Publish
         run: dotnet publish dotnet-core/dotnet-core.csproj -c Release
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.2
+        with:
+          name: dotnet-core
+          path: dotnet-core
+          if-no-files-found: error
