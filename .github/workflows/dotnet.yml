@@ -44,12 +44,12 @@ jobs:
     - name: Build Docker Image
       run: |-
         cd dotnet-core; docker build -t dotnet-core:1.0 . --platform linux/amd64;
-    - uses: actions-hub/kubectl@master
+    - name: Get Pods
+      uses: actions-hub/kubectl@master
       env:
         KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
       with:
         args: get pods
-    - name: Get Pods
       run: |-
         kubectl get all
     #- name: k8s Deploy
