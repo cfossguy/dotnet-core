@@ -6,6 +6,16 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GAR_LOCATION: us-central1 # TODO: update region of the Artifact Registry
+  GKE_CLUSTER: se-jwilliams    # TODO: update to cluster name
+  GKE_ZONE: us-central1-c   # TODO: update to cluster zone
+  DEPLOYMENT_NAME: gke-dotnet-core # TODO: update to deployment name
+  REPOSITORY: dotnet-core # TODO: update to Artifact Registry docker repository
+  IMAGE: dotnet-core
+
 jobs:
   build:
 
@@ -23,3 +33,13 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      # Alternative option - authentication via credentials json
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v0'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    - name: Build Docker Image
+      run: |-
+        echo $GCP_CREDENTIALS | docker login -u _json_key --password-stdin https://$GAR_LOCATION-docker.pkg.dev      
+      run: |-
+        docker build -t dotnet-core:1.0 . --platform linux/amd64;
