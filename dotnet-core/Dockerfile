@@ -1,4 +1,4 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:5.0 
-COPY /home/runner/work/dotnet-core/dotnet-core/dotnet-core/bin/Debug/net5.0 App/
+COPY bin/Debug/net5.0/ref App/
 WORKDIR /App
 ENTRYPOINT ["dotnet", "dotnet-core.dll"]
