@@ -46,7 +46,7 @@ jobs:
       run: |-
         cd dotnet-core 
         docker build -t dotnet-core:$RELEASE_VERSION . --platform linux/amd64
-        docker tag dotnet-core:$RELEASE_VERSION us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:1.0
+        docker tag dotnet-core:$RELEASE_VERSION us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:$RELEASE_VERSION
         docker push us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:$RELEASE_VERSION
     - name: k8s Deploy
       run: |-
