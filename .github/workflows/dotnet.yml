@@ -41,9 +41,9 @@ jobs:
     - name: Docker Login
       run: |-
         echo $GCP_CREDENTIALS | docker login -u _json_key --password-stdin https://$GAR_LOCATION-docker.pkg.dev  
-    #- name: List work files
-    #  run: |-
-    #    cd dotnet-core; ls -R;
     - name: Build Docker Image
       run: |-
         cd dotnet-core; docker build -t dotnet-core:1.0 . --platform linux/amd64;
+    - name: k8s Deploy
+      run: |-
+        kubectl apply -f ./deployment.yaml; kubectl rollout restart deployment dotnet-core;
