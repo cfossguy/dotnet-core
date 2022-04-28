@@ -51,4 +51,54 @@ jobs:
     - name: k8s Deploy
       run: |-
         gcloud container clusters get-credentials se-jwilliams --zone $GKE_ZONE --project $PROJECT_ID
-        kubectl apply -f ./deployment.yaml; kubectl rollout restart deployment dotnet-core;
+        cat <<EOF >release-deployment.yaml
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          labels:
+            app: dotnet-core
+          name: dotnet-core
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              app: dotnet-core
+          strategy: {}
+          template:
+            metadata:
+              creationTimestamp: null
+              labels:
+                app: dotnet-core
+            spec:
+              containers:
+                - image: us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:$RELEASE_VERSION
+                  imagePullPolicy: Always
+                  name: dotnet-core
+                  ports:
+                    - containerPort: 80
+                  resources: {}
+        status: {}
+        ---
+        apiVersion: v1
+        kind: Service
+        metadata:
+          annotations:
+            cloud.google.com/neg: '{"ingress":true}'
+          finalizers:
+            - service.kubernetes.io/load-balancer-cleanup
+          labels:
+            app: dotnet-core
+          name: dotnet-core
+          namespace: default
+        spec:
+          externalTrafficPolicy: Cluster
+          ports:
+            - port: 80
+              protocol: TCP
+              targetPort: 80
+          selector:
+            app: dotnet-core
+          sessionAffinity: None
+          type: LoadBalancer
+        EOF
+        kubectl apply -f ./release-deployment.yaml; kubectl rollout restart deployment dotnet-core;
