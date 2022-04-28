@@ -44,13 +44,12 @@ jobs:
     - name: Build Docker Image
       run: |-
         cd dotnet-core; docker build -t dotnet-core:1.0 . --platform linux/amd64;
-      # Set up kustomize
-    - name: Set up Kustomize
-      run: |-
-        curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
-        chmod u+x ./kustomize
-      # Deploy the Docker image to the GKE cluster
-    - name: Deploy
+    - uses: actions-hub/kubectl@master
+      env:
+        KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+      with:
+        args: get pods
+    - name: Get Pods
       run: |-
         kubectl get all
     #- name: k8s Deploy
