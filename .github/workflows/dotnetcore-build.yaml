@@ -28,5 +28,5 @@ jobs:
         uses: actions/upload-artifact@v2.2.2
         with:
           name: dotnet-core
-          path: dotnet-core
+          path: dotnet-core/bin/Release/net5.0/publish/dotnet-core.dll
           if-no-files-found: error
