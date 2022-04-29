@@ -40,6 +40,7 @@
       <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net5.0/ref/dotnet-core.dll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net5.0/staticwebassets/dotnet-core.StaticWebAssets.Manifest.cache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net5.0/staticwebassets/dotnet-core.StaticWebAssets.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.CoreCompileInputs.cache" afterDir="false" />
@@ -150,7 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651266823596</updated>
       <workItem from="1651266832278" duration="464000" />
-      <workItem from="1651268337397" duration="7140000" />
+      <workItem from="1651268337397" duration="7533000" />
     </task>
     <servers />
   </component>

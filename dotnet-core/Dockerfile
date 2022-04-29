@@ -1,4 +1,4 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 
-COPY bin/Debug/net6.0 App/
+COPY bin/Debug/net6.0/ App/
 WORKDIR /App
 ENTRYPOINT ["dotnet", "dotnet-core.dll"]
