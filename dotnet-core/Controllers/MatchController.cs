@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,17 +16,56 @@ namespace dotnet_core.Controllers
 
         private readonly ILogger<MatchController> _logger;
 
-        public MatchController(ILogger<MatchController> logger)
+        public MatchController()
         {
+            using ILoggerFactory loggerFactory =
+                LoggerFactory.Create(builder =>
+                    builder.AddSystemdConsole(options =>
+                    {
+                        options.IncludeScopes = true;
+                        options.TimestampFormat = "hh:mm:ss:fff";
+                        
+                    }));
+
+            ILogger<MatchController> logger = loggerFactory.CreateLogger<MatchController>();
             _logger = logger;
         }
 
-        [Route("fast")] 
+        [Route("slow/{size:int}/{delay:int}")] 
         [HttpGet] 
-        public string Fast(int k)
+        public string Slow(int size, int delay)
         {
-            _logger.LogInformation("Fast method call that returns a fixed length string");
-            return getMockResponse(k);
+            int delayTime = delay * 100;
+            _logger.LogWarning(String.Format("/slow api that has a {0}ms delay",delayTime));
+            Thread.Sleep(delayTime);
+            _logger.LogInformation("/slow api that returns a fixed length string");
+            return getMockResponse(size);
+        }
+        
+        [Route("fast/{size:int}")] 
+        [HttpGet] 
+        public string Fast(int size)
+        {
+            _logger.LogInformation("/fast api that returns a fixed length string");
+            return getMockResponse(size);
+        }
+        
+        [Route("roulette")] 
+        [HttpGet] 
+        public IActionResult Roulette()
+        {
+            Random rnd = new Random();
+            int number   = rnd.Next(1, 14);   // creates a number between 1 and 13
+
+            _logger.LogWarning(String.Format("/roulette api wheel lands on {0}",number));
+
+            if (number == 13)
+            {
+                _logger.LogError("/roulette api says you have very bad luck!");
+                return StatusCode(500);
+            }
+            
+            return new OkObjectResult(new { message = "You have very good luck!", number = number });
         }
         
         [Route("helloworld")] 
@@ -35,13 +76,10 @@ namespace dotnet_core.Controllers
         }
         
         private string getMockResponse(int s) {
+            string phrase = "All work and no play makes .netcore a slow API";
             string response = "";
-            int kbSize = s * 1000;
-
-            for(int i=0; i<kbSize; i++) {
-                if (i % 100 == 0)
-                    response += "\n";
-                response += "!";
+            for(int i=0; i<s; i++) {
+                response += phrase + "\n";
             }
 
             return response;
