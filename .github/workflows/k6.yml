@@ -1,14 +1,9 @@
 name: Run k6 soak test
 
-#on:
-#  workflow_run:
-#    workflows: [ ".NET Core Delivery Pipeline" ]
-#    types: [completed]
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_run:
+    workflows: [ ".NET Core Delivery Pipeline" ]
+    types: [completed]
     
 env:
   GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
