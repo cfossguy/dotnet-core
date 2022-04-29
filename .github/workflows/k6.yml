@@ -8,7 +8,7 @@ on:
 
 jobs:
   soak_test:
-    runs-on: loadimpact/k6
+    runs-on: ubuntu-latest
     steps:
       - uses: 'google-github-actions/auth@v0'
       - name: Run Soak Test
