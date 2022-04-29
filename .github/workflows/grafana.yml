@@ -26,5 +26,5 @@ jobs:
       - name: Grafana API - Annotate
         run: |-
           curl -X POST $GRAFANA_CLOUD_API_DOMAIN/api/annotations \
-          -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${{GRAFANA_CLOUD_API_KEY}}' \
-          -d '{"tags":["app","$APP"],"text":"New Release Deployed - v{{$RELEASE_VERSION}}"}'
+          -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer $GRAFANA_CLOUD_API_KEY' \
+          -d '{"tags":["app","$APP"],"text":"New Release Deployed - v$RELEASE_VERSION"}'
