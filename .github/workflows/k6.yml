@@ -30,7 +30,7 @@ jobs:
         run: |-
           gcloud container clusters get-credentials se-jwilliams --zone $GKE_ZONE --project $PROJECT_ID
           cat <<EOF >soaktest-cronjob.yaml
-          apiVersion: batch/v1beta1
+          apiVersion: batch/v1
           kind: CronJob
           metadata:
             name: k6-loadgen
