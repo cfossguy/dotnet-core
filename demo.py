@@ -2,6 +2,7 @@
 import click
 import os
 from dotenv import load_dotenv
+import requests
 
 #load_dotenv(override=True, verbose=True)
 #gcp_project = os.getenv('gcp_project')
@@ -43,5 +44,24 @@ def k8s_delete_evicted_pods():
 
 cli.add_command(k8s_delete_evicted_pods)
 
+@click.command()
+def set_annotation():
+    """Provision a global annotation"""
+    gcloud_api_key_dashboards = os.getenv('gcloud_api_key_dashboards')
+    gcloud_domain_dashboards = os.getenv('gcloud_domain_dashboards')
+    url = f"{gcloud_domain_dashboards}/api/annotations"
+
+    dashboard = open('release-annotation.json')
+    headers = {"Accept": "application/json",
+               "Content-Type": "application/json",
+               "Authorization": f"Bearer {gcloud_api_key_dashboards}"}
+    response = requests.post(url=url, data=dashboard, headers=headers)
+    try:
+       print(f"Success: {response.text}")
+    except KeyError:
+        print(f"Error occurred: {response.text}")
+        
+cli.add_command(set_annotation)
+    
 if __name__ == "__main__":
     cli()
