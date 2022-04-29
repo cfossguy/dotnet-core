@@ -2,9 +2,9 @@ name: .NET Core Delivery Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ na ]
   pull_request:
-    branches: [ main ]
+    branches: [ na ]
 
 env:
   GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
@@ -21,7 +21,6 @@ jobs:
   build:
     name: Build, Docker Publish, Kubernetes Deploy
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET

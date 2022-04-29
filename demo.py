@@ -56,6 +56,9 @@ def set_annotation():
                "Content-Type": "application/json",
                "Authorization": f"Bearer {gcloud_api_key_dashboards}"}
     response = requests.post(url=url, data=dashboard, headers=headers)
+    r = requests.Request(requests.post(url=url, data=dashboard, headers=headers))
+    print(r)
+   
     try:
        print(f"Success: {response.text}")
     except KeyError:

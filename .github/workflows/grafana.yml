@@ -1,0 +1,31 @@
+name: Grafana Annotations
+
+#on:
+#  workflow_run:
+#    workflows: [ ".NET Core Delivery Pipeline" ]
+#    types: [completed]
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  APP: dotnet-core
+  RELEASE_VERSION: 1.1
+  GRAFANA_CLOUD_API_DOMAIN: ${{ secrets.GRAFANA_CLOUD_API_DOMAIN }}
+  GRAFANA_CLOUD_API_KEY: ${{ secrets.GRAFANA_CLOUD_API_KEY }}
+  
+jobs:
+  build:
+    name: Create Releae Annotation
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Grafana API - Annotate
+        run: |-
+          curl --data "{"tags":["app",$APP],"text":"New Release Deployed - v$RELEASE_VERSION"}" \
+          -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer GRAFANA_CLOUD_API_KEY" \ 
+          http://$GRAFANA_CLOUD_API_DOMAIN/resource/api/annotations \
