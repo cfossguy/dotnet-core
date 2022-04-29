@@ -6,9 +6,9 @@ name: Run k6 soak test
 #    types: [completed]
 on:
   push:
-    branches: [ na ]
+    branches: [ main ]
   pull_request:
-    branches: [ na ]
+    branches: [ main ]
     
 env:
   GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
