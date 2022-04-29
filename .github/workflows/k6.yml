@@ -36,14 +36,14 @@ jobs:
             name: k6-loadgen
           spec:
             schedule: "*/3 * * * *"
-              jobTemplate:
-                spec:
-                  template:
-                    spec:
-                      containers:
-                      - name: k6-loadgen
-                        image: loadimpact/k6
-                        command: ["k6", "run", "https://raw.githubusercontent.com/cfossguy/dotnet-core/main/soakstest.js"]
-                      restartPolicy: Never
+            jobTemplate:
+              spec:
+                template:
+                  spec:
+                    containers:
+                    - name: k6-loadgen
+                      image: loadimpact/k6
+                      command: ["k6", "run", "https://raw.githubusercontent.com/cfossguy/dotnet-core/main/soakstest.js"]
+                    restartPolicy: Never
           EOF
           kubectl apply -f ./soaktest-cronjob.yaml -n k6
