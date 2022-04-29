@@ -10,7 +10,7 @@ jobs:
   soak_test:
     runs-on: loadimpact/k6
     steps:
-      - uses: actions/checkout@v2
+      - uses: 'google-github-actions/auth@v0'
       - name: Run Soak Test
         run: |- 
           echo "soak test todo"
