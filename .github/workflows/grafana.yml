@@ -23,7 +23,6 @@ jobs:
     #if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Grafana API - Annotate
         run: |-
           curl --data "{'tags':['app',$APP],'text':'New Release Deployed - v$RELEASE_VERSION'}" -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $GRAFANA_CLOUD_API_KEY" $GRAFANA_CLOUD_API_DOMAIN/resource/api/annotations
