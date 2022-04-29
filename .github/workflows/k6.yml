@@ -3,14 +3,14 @@ name: Run k6 soak test
 on:
   workflow_run:
     workflows: [ ".NET Core Delivery Pipeline" ]
-    types:
-      - completed
+    types: [completed]
 
 jobs:
-  soak_test:
+  soak-test:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
       - name: Run Soak Test
-        run: |- 
+        run: |-
           echo "soak test todo"
