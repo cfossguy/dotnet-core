@@ -2,9 +2,9 @@ name: .NET Core Delivery Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ na ]
   pull_request:
-    branches: [ main ]
+    branches: [ na ]
 
 env:
   GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
