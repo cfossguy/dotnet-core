@@ -1,0 +1,16 @@
+name: Run k6 soak test
+
+on:
+  workflow_run:
+    workflows: [ ".NET Core Delivery Pipeline" ]
+    types:
+      - completed
+
+jobs:
+  soak_test:
+    runs-on: loadimpact/k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Soak Test
+        run: |- 
+          echo "soak test todo"
