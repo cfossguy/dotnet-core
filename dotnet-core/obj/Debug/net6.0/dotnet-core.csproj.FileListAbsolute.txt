@@ -13,12 +13,6 @@
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/dotnet-core.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/dotnet-core.pdb
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Microsoft.OpenApi.dll
-/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.dll
-/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Api.dll
-/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Exporter.Console.dll
-/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Extensions.Hosting.dll
-/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Instrumentation.AspNetCore.dll
-/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Instrumentation.Http.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -31,3 +25,14 @@
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/obj/Debug/net6.0/dotnet-core.pdb
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/obj/Debug/net6.0/dotnet-core.genruntimeconfig.cache
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/obj/Debug/net6.0/ref/dotnet-core.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Api.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Exporter.Console.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Extensions.Hosting.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Instrumentation.AspNetCore.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Instrumentation.Http.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Exporter.Prometheus.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Prometheus.NetCore.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Prometheus.NetStandard.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Prometheus.AspNetCore.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Exporter.Jaeger.dll
