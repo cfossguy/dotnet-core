@@ -12,7 +12,8 @@ env:
   GKE_ZONE: us-central1-c   # TODO: update to cluster zone
 
 jobs:
-  soak-test:
+  build:
+    name: K6 Soak Test
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
