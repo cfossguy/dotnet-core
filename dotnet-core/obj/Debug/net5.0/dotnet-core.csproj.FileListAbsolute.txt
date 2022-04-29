@@ -26,3 +26,11 @@
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/obj/Debug/net5.0/ref/dotnet-core.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/obj/Debug/net5.0/dotnet-core.pdb
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/obj/Debug/net5.0/dotnet-core.genruntimeconfig.cache
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net5.0/OpenTelemetry.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net5.0/OpenTelemetry.Api.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net5.0/OpenTelemetry.Exporter.Console.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net5.0/OpenTelemetry.Extensions.Hosting.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net5.0/OpenTelemetry.Instrumentation.AspNetCore.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net5.0/OpenTelemetry.Instrumentation.Http.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
