@@ -39,7 +39,7 @@ jobs:
                     containers:
                     - name: k6-loadgen
                       image: loadimpact/k6
-                      command: ["k6", "run", "https://raw.githubusercontent.com/cfossguy/dotnet-core/main/soakstest.js"]
+                      command: ["k6", "run", "https://raw.githubusercontent.com/cfossguy/dotnet-core/main/soaktest.js"]
                     restartPolicy: Never
           EOF
           kubectl apply -f ./soaktest-cronjob.yaml -n k6
