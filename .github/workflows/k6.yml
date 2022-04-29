@@ -33,7 +33,7 @@ jobs:
           apiVersion: batch/v1
           kind: CronJob
           metadata:
-            name: k6-loadgen
+            name: k6-loadgen-dotnet-core
           spec:
             schedule: "*/3 * * * *"
             jobTemplate:
