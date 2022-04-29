@@ -13,4 +13,3 @@ export default function () {
     http.get('http://35.188.223.237/Match/fast/100');
     http.get('http://35.188.223.237/Match/roulette');
 }
-}
