@@ -15,13 +15,16 @@ env:
   DEPLOYMENT_NAME: gke-dotnet-core # TODO: update to deployment name
   REPOSITORY: dotnet-core # TODO: update to Artifact Registry docker repository
   IMAGE: dotnet-core
-  RELEASE_VERSION: ${{ github.event.head_commit.message }}
 
 jobs:
   build:
     name: Build, Docker Publish, Kubernetes Deploy
     runs-on: ubuntu-latest
     steps:
+    - name: Set Environment Variables
+      uses: ./.github/actions/setvars
+      with:
+        varFilePath: ./.github/variables/myvars.env
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
