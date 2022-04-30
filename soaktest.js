@@ -9,7 +9,10 @@ export let options = {
 };
 
 export default function () {
-    http.get('http://35.188.223.237/Match/slow/100/50');
+    http.get('http://35.188.223.237/Match/slow/100/60');
+    http.get('http://35.188.223.237/Match/slow/10/30');
     http.get('http://35.188.223.237/Match/fast/100');
+    http.get('http://35.188.223.237/Match/fast/10');
+    http.get('http://35.188.223.237/Match/fast/1');
     http.get('http://35.188.223.237/Match/roulette');
 }

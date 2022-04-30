@@ -1,33 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace dotnet_core.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("match")]
     public class MatchController : ControllerBase
     {
-
         private readonly ILogger<MatchController> _logger;
 
-        public MatchController()
+        public MatchController(ILogger<MatchController> logger)
         {
-            using ILoggerFactory loggerFactory =
-                LoggerFactory.Create(builder =>
-                    builder.AddSystemdConsole(options =>
-                    {
-                        options.IncludeScopes = true;
-                        options.TimestampFormat = "hh:mm:ss:fff";
-                        
-                    }));
-
-            ILogger<MatchController> logger = loggerFactory.CreateLogger<MatchController>();
             _logger = logger;
         }
 
@@ -56,7 +39,7 @@ namespace dotnet_core.Controllers
         {
             Random rnd = new Random();
             int number   = rnd.Next(1, 14);   // creates a number between 1 and 13
-
+            
             _logger.LogWarning(String.Format("/roulette api wheel lands on {0}",number));
 
             if (number == 13)
@@ -80,6 +63,7 @@ namespace dotnet_core.Controllers
             string response = "";
             for(int i=0; i<s; i++) {
                 response += phrase + "\n";
+                Thread.Sleep(10);
             }
 
             return response;

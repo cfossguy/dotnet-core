@@ -3,8 +3,28 @@ using OpenTelemetry.Exporter;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Prometheus;
+using NLog;
+using NLog.Web;
+
+var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+logger.Debug("init main");
 
 var builder = WebApplication.CreateBuilder(args);
+
+// NLog: Setup NLog for Dependency injection
+builder.Logging.ClearProviders();
+builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+builder.Host.UseNLog();
+var config = new NLog.Config.LoggingConfiguration();
+
+// Targets where to log to: File and Console
+var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
+            
+// Rules for mapping loggers to targets            
+config.AddRule(NLog.LogLevel.Info, NLog.LogLevel.Fatal, logconsole);
+
+// Apply config           
+NLog.LogManager.Configuration = config;
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

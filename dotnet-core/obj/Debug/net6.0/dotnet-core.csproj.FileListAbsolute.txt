@@ -47,3 +47,6 @@
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/runtimes/osx-x64/native/libgrpc_csharp_ext.x64.dylib
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/runtimes/win-x64/native/grpc_csharp_ext.x64.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/runtimes/win-x86/native/grpc_csharp_ext.x86.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/NLog.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/NLog.Extensions.Logging.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/NLog.Web.AspNetCore.dll
