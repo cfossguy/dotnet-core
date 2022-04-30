@@ -31,7 +31,7 @@ jobs:
           metadata:
             name: k6-loadgen-dotnet-core
           spec:
-            schedule: "*/3 * * * *"
+            schedule: "0 * * * *"
             jobTemplate:
               spec:
                 template:

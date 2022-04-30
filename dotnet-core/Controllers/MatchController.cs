@@ -18,9 +18,8 @@ namespace dotnet_core.Controllers
         [HttpGet] 
         public string Slow(int size, int delay)
         {
-            int delayTime = delay * 100;
             _logger.LogWarning(String.Format("/slow api that has a {0}ms delay",delayTime));
-            Thread.Sleep(delayTime);
+            Thread.Sleep(delay);
             _logger.LogInformation("/slow api that returns a fixed length string");
             return getMockResponse(size);
         }
