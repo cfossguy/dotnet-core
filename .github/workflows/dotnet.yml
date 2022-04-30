@@ -41,7 +41,6 @@ jobs:
     - name: Build/Upload Image to Artifact Registry
       run: |-
         echo $GCP_CREDENTIALS | docker login -u _json_key --password-stdin https://$GAR_LOCATION-docker.pkg.dev
-        ls -R  
         docker build -t dotnet-core:$RELEASE_VERSION -f ./dotnet-core/Dockerfile . --platform linux/amd64
         docker tag dotnet-core:$RELEASE_VERSION us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:$RELEASE_VERSION
         docker push us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:$RELEASE_VERSION
