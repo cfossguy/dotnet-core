@@ -38,9 +38,9 @@ namespace dotnet_core.Controllers
         {
             Random rnd = new Random();
             int number   = rnd.Next(1, 14);   // creates a number between 1 and 13
-            
+            Thread.Sleep(300);
             _logger.LogWarning(String.Format("/roulette api wheel lands on {0}",number));
-
+            
             if (number == 13)
             {
                 _logger.LogError("/roulette api says you have very bad luck!");
