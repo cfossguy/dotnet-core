@@ -15,7 +15,7 @@ env:
   DEPLOYMENT_NAME: gke-dotnet-core # TODO: update to deployment name
   REPOSITORY: dotnet-core # TODO: update to Artifact Registry docker repository
   IMAGE: dotnet-core
-  RELEASE_VERSION: 1.1
+  RELEASE_VERSION: ${{ github.event.head_commit.message }}
 
 jobs:
   build:

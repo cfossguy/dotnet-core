@@ -13,7 +13,7 @@ on:
 
 env:
   APP: dotnet-core
-  RELEASE_VERSION: 1.1
+  RELEASE_VERSION: ${{ github.event.head_commit.message }}
   GRAFANA_CLOUD_API_DOMAIN: ${{ secrets.GRAFANA_CLOUD_API_DOMAIN }}
   GRAFANA_CLOUD_API_KEY: ${{ secrets.GRAFANA_CLOUD_API_KEY }}
   
