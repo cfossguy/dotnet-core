@@ -12,14 +12,14 @@ export default function () {
     http.get('http://35.188.223.237/Match/slow/100/800');
     http.get('http://35.188.223.237/Match/slow/100/900');
     http.get('http://35.188.223.237/Match/slow/100/1000');
+    http.get('http://35.188.223.237/Match/fast/100');
+    http.get('http://35.188.223.237/Match/fast/90');
+    http.get('http://35.188.223.237/Match/fast/80');
+    http.get('http://35.188.223.237/Match/fast/70');
+    http.get('http://35.188.223.237/Match/fast/60');
+    http.get('http://35.188.223.237/Match/fast/50');
+    http.get('http://35.188.223.237/Match/fast/30');
+    http.get('http://35.188.223.237/Match/fast/20');
     http.get('http://35.188.223.237/Match/fast/10');
-    http.get('http://35.188.223.237/Match/fast/9');
-    http.get('http://35.188.223.237/Match/fast/8');
-    http.get('http://35.188.223.237/Match/fast/7');
-    http.get('http://35.188.223.237/Match/fast/6');
-    http.get('http://35.188.223.237/Match/fast/5');
-    http.get('http://35.188.223.237/Match/fast/3');
-    http.get('http://35.188.223.237/Match/fast/2');
-    http.get('http://35.188.223.237/Match/fast/1');
     http.get('http://35.188.223.237/Match/roulette');
 }
