@@ -1,4 +1,5 @@
 using System.Net;
+using OpenTelemetry.Exporter;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Prometheus;
@@ -22,6 +23,7 @@ builder.Services.AddOpenTelemetryTracing(b =>
     .AddOtlpExporter(opt =>
     {
         opt.Endpoint = new Uri("http://10.100.158.8:4317");
+        opt.Protocol = OtlpExportProtocol.HttpProtobuf;
     });
 });
 
