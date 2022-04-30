@@ -19,7 +19,7 @@
         "type": "dashboard"
       },
       {
-        "datasource": "$LOKI_DS",
+        "datasource": "grafanacloud-sejwilliams-logs",
         "enable": false,
         "expr": "{app=\"dotnet-core\"} |= \"|ERROR|\"",
         "iconColor": "red",
@@ -34,7 +34,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 103,
-  "iteration": 1651353234100,
+  "iteration": 1651357019645,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -315,74 +315,10 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "loki",
-        "uid": "grafanacloud-logs"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
       "gridPos": {
         "h": 8,
-        "w": 4,
+        "w": 11,
         "x": 10,
-        "y": 5
-      },
-      "id": 25,
-      "options": {
-        "displayMode": "gradient",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": true,
-        "text": {}
-      },
-      "pluginVersion": "8.5.0-52039pre",
-      "targets": [
-        {
-          "datasource": {
-            "type": "loki",
-            "uid": "grafanacloud-logs"
-          },
-          "expr": "sum by (level) (rate({app=\"dotnet-core\"} | pattern `<date> <time>|<level>|<controller>|<message>` | level != \"\" [1s]))",
-          "instant": false,
-          "legendFormat": "{{level}}",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Loki: Log Queue",
-      "type": "bargauge"
-    },
-    {
-      "gridPos": {
-        "h": 8,
-        "w": 7,
-        "x": 14,
         "y": 5
       },
       "id": 20,
@@ -567,11 +503,77 @@
         "type": "loki",
         "uid": "grafanacloud-logs"
       },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 21,
+        "x": 0,
+        "y": 13
+      },
+      "id": 25,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.5.0-52039pre",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "expr": "sum by (level) (rate({app=\"dotnet-core\"} | pattern `<date> <time>|<level>|<controller>|<message>` | level != \"\" [1s]))",
+          "instant": false,
+          "legendFormat": "{{level}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Loki: Log Queue",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "grafanacloud-logs"
+      },
       "gridPos": {
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 13
+        "y": 17
       },
       "id": 42,
       "options": {
@@ -603,7 +605,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 24
       },
       "id": 12,
       "panels": [
@@ -1216,13 +1218,13 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Cloud Native Forensics - dotnet-core",
   "uid": "Hw7lGqQ7k",
-  "version": 26,
+  "version": 27,
   "weekStart": ""
 }
