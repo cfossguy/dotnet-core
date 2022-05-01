@@ -37,7 +37,7 @@ namespace dotnet_core.Controllers
         public IActionResult Roulette()
         {
             Random rnd = new Random();
-            int number   = rnd.Next(1, 14);   // creates a number between 1 and 13
+            int number   = rnd.Next(1, 100);   
             Thread.Sleep(300);
             _logger.LogWarning(String.Format("/roulette api wheel lands on {0}",number));
             
