@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
 builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
 builder.Host.UseNLog();
+
 var config = new NLog.Config.LoggingConfiguration();
 var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
 config.AddRule(NLog.LogLevel.Info, NLog.LogLevel.Fatal, logconsole);

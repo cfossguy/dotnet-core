@@ -5,12 +5,6 @@ on:
     workflows: [ ".NET Core Delivery Pipeline" ]
     types: [completed]
 
-#on:
-#  push:
-#    branches: [ main ]
-#  pull_request:
-#    branches: [ main ]
-
 env:
   APP: dotnet-core
   GRAFANA_CLOUD_API_DOMAIN: ${{ secrets.GRAFANA_CLOUD_API_DOMAIN }}
