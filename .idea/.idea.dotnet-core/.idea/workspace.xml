@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93c9fe5d-71a1-47e9-9239-2a51673b305e" name="Changes" comment="added tempo tweaks.">
+    <list default="true" id="93c9fe5d-71a1-47e9-9239-2a51673b305e" name="Changes" comment="otel with zipkin.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnet-core/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/Program.cs" afterDir="false" />
     </list>
@@ -110,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651266823596</updated>
       <workItem from="1651266832278" duration="464000" />
-      <workItem from="1651268337397" duration="55927000" />
+      <workItem from="1651268337397" duration="57413000" />
     </task>
     <task id="LOCAL-00001" summary="workspace">
       <created>1651434252765</created>
@@ -147,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651616804178</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="otel with zipkin.">
+      <created>1651617394448</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651617394449</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +190,7 @@
     <MESSAGE value="slow code tweak" />
     <MESSAGE value="changed roulette endpoint" />
     <MESSAGE value="added tempo tweaks." />
-    <option name="LAST_COMMIT_MESSAGE" value="added tempo tweaks." />
+    <MESSAGE value="otel with zipkin." />
+    <option name="LAST_COMMIT_MESSAGE" value="otel with zipkin." />
   </component>
 </project>
