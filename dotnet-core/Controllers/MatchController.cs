@@ -47,7 +47,7 @@ namespace dotnet_core.Controllers
                 return StatusCode(500);
             }
             
-            return new OkObjectResult(new { message = "You have very good luck!", number = number });
+            return new OkObjectResult(new { message = getMockResponse(number), number = number });
         }
         
         [Route("helloworld")] 
