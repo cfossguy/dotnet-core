@@ -972,7 +972,7 @@
                 "uid": "grafanacloud-prom"
               },
               "exemplar": true,
-              "expr": "sum by(container) (rate(container_cpu_usage_seconds_total{cluster=\"development\",namespace=\"default\",container=\"spring-node\"}[$__interval]))",
+              "expr": "sum by(container) (rate(container_cpu_usage_seconds_total{cluster=\"development\",namespace=\"default\",container=\"dotnet-core\"}[$__interval]))",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
