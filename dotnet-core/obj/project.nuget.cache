@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sFBhRJYY+vG+RJ31T2mrd5Ezh94Rg15udJg5mlHppy1meXmOLJuAk+5qOkcXNwOgfEwA6+tI4BrfZcvGe0tE7A==",
+  "dgSpecHash": "EgNHT39FGv71ymguFe0mCZhAfhKUSj5ZTS+1qDcdIboeii5z+DCUCk1Y4+sK2iwadRAnM5HKVmU/ry1RNMIQjw==",
   "success": true,
   "projectFilePath": "/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/dotnet-core.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,7 @@
     "/Users/jwilliams/.nuget/packages/opentelemetry.extensions.hosting/1.0.0-rc9.3/opentelemetry.extensions.hosting.1.0.0-rc9.3.nupkg.sha512",
     "/Users/jwilliams/.nuget/packages/opentelemetry.instrumentation.aspnetcore/1.0.0-rc9.3/opentelemetry.instrumentation.aspnetcore.1.0.0-rc9.3.nupkg.sha512",
     "/Users/jwilliams/.nuget/packages/opentelemetry.instrumentation.http/1.0.0-rc9.3/opentelemetry.instrumentation.http.1.0.0-rc9.3.nupkg.sha512",
+    "/Users/jwilliams/.nuget/packages/opentelemetry.instrumentation.sqlclient/1.0.0-rc9.3/opentelemetry.instrumentation.sqlclient.1.0.0-rc9.3.nupkg.sha512",
     "/Users/jwilliams/.nuget/packages/prometheus-net/6.0.0/prometheus-net.6.0.0.nupkg.sha512",
     "/Users/jwilliams/.nuget/packages/prometheus-net.aspnetcore/6.0.0/prometheus-net.aspnetcore.6.0.0.nupkg.sha512",
     "/Users/jwilliams/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",

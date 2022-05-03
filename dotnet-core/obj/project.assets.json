@@ -436,6 +436,18 @@
           "lib/netstandard2.0/OpenTelemetry.Instrumentation.Http.dll": {}
         }
       },
+      "OpenTelemetry.Instrumentation.SqlClient/1.0.0-rc9.3": {
+        "type": "package",
+        "dependencies": {
+          "OpenTelemetry.Api": "1.3.0-beta.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/OpenTelemetry.Instrumentation.SqlClient.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenTelemetry.Instrumentation.SqlClient.dll": {}
+        }
+      },
       "prometheus-net/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -1244,6 +1256,22 @@
         "opentelemetry.instrumentation.http.nuspec"
       ]
     },
+    "OpenTelemetry.Instrumentation.SqlClient/1.0.0-rc9.3": {
+      "sha512": "/6NzX1DWHYbsmGOKFmYLzPAv+7ED73JXS+Qx43a321AVt8ecZp/sAOCJU7lr3TFIfjbtEtQd/XVEMt9l9HRGVw==",
+      "type": "package",
+      "path": "opentelemetry.instrumentation.sqlclient/1.0.0-rc9.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/OpenTelemetry.Instrumentation.SqlClient.dll",
+        "lib/net462/OpenTelemetry.Instrumentation.SqlClient.xml",
+        "lib/netstandard2.0/OpenTelemetry.Instrumentation.SqlClient.dll",
+        "lib/netstandard2.0/OpenTelemetry.Instrumentation.SqlClient.xml",
+        "opentelemetry-icon-color.png",
+        "opentelemetry.instrumentation.sqlclient.1.0.0-rc9.3.nupkg.sha512",
+        "opentelemetry.instrumentation.sqlclient.nuspec"
+      ]
+    },
     "prometheus-net/6.0.0": {
       "sha512": "rD6iXx1mKx6uy5E7YkktLxvBQKFTbNfe3qc43s+9ZuYWgEm41QMTlw/a+R+Hs86NkfHG3oHYAJuP7c7HQ+oj9Q==",
       "type": "package",
@@ -1577,6 +1605,7 @@
       "OpenTelemetry.Extensions.Hosting >= 1.0.0-rc9.3",
       "OpenTelemetry.Instrumentation.AspNetCore >= 1.0.0-rc9.3",
       "OpenTelemetry.Instrumentation.Http >= 1.0.0-rc9.3",
+      "OpenTelemetry.Instrumentation.SqlClient >= 1.0.0-rc9.3",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "prometheus-net >= 6.0.0",
       "prometheus-net.AspNetCore >= 6.0.0"
@@ -1660,6 +1689,10 @@
             "version": "[1.0.0-rc9.3, )"
           },
           "OpenTelemetry.Instrumentation.Http": {
+            "target": "Package",
+            "version": "[1.0.0-rc9.3, )"
+          },
+          "OpenTelemetry.Instrumentation.SqlClient": {
             "target": "Package",
             "version": "[1.0.0-rc9.3, )"
           },

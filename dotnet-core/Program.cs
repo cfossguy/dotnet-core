@@ -2,6 +2,7 @@ using System.Net;
 using OpenTelemetry.Exporter;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
+using OpenTelemetry.Instrumentation;
 using Prometheus;
 using NLog;
 using NLog.Web;
@@ -32,13 +33,14 @@ builder.Services.AddOpenTelemetryTracing(b =>
     b
     .AddSource("dotnet-core")
     .SetResourceBuilder(
-        ResourceBuilder.CreateDefault().AddService("dotnet-core"))
+        ResourceBuilder.CreateDefault().AddService("dotnet-core", serviceVersion:"1.1.3pre"))
     .AddHttpClientInstrumentation()
     .AddAspNetCoreInstrumentation()
+    .AddSqlClientInstrumentation()
     .AddOtlpExporter(opt =>
     {
         opt.Endpoint = new Uri("http://10.100.158.8:4317");
-        opt.Protocol = OtlpExportProtocol.HttpProtobuf;
+        opt.Protocol = OtlpExportProtocol.Grpc;
     });
 });
 
