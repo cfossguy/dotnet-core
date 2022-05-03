@@ -396,6 +396,19 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "OpenTelemetry.Exporter.Zipkin/1.3.0-beta.1": {
+        "type": "package",
+        "dependencies": {
+          "OpenTelemetry": "1.3.0-beta.1",
+          "System.Text.Json": "4.7.0"
+        },
+        "compile": {
+          "lib/net5.0/OpenTelemetry.Exporter.Zipkin.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/OpenTelemetry.Exporter.Zipkin.dll": {}
+        }
+      },
       "OpenTelemetry.Extensions.Hosting/1.0.0-rc9.3": {
         "type": "package",
         "dependencies": {
@@ -580,6 +593,15 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Text.Json/4.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       },
       "System.Threading.Tasks.Extensions/4.5.3": {
@@ -1204,6 +1226,24 @@
         "opentelemetry.exporter.prometheus.nuspec"
       ]
     },
+    "OpenTelemetry.Exporter.Zipkin/1.3.0-beta.1": {
+      "sha512": "oOwP2TJuclQ+fUWPMfpdGazzbUOovgCU1LrHzLpNm1Ks1fzWxWnrdlhb6SXj/WzPeuYp0DCDBsV0nRCmlL8nlw==",
+      "type": "package",
+      "path": "opentelemetry.exporter.zipkin/1.3.0-beta.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/OpenTelemetry.Exporter.Zipkin.dll",
+        "lib/net462/OpenTelemetry.Exporter.Zipkin.xml",
+        "lib/net5.0/OpenTelemetry.Exporter.Zipkin.dll",
+        "lib/net5.0/OpenTelemetry.Exporter.Zipkin.xml",
+        "lib/netstandard2.0/OpenTelemetry.Exporter.Zipkin.dll",
+        "lib/netstandard2.0/OpenTelemetry.Exporter.Zipkin.xml",
+        "opentelemetry-icon-color.png",
+        "opentelemetry.exporter.zipkin.1.3.0-beta.1.nupkg.sha512",
+        "opentelemetry.exporter.zipkin.nuspec"
+      ]
+    },
     "OpenTelemetry.Extensions.Hosting/1.0.0-rc9.3": {
       "sha512": "xxlBCAQQ61W0CZCuGmF13K6vKIsM4P9g29szle69sc5MqnJbB4mY+A1ziX5hY/A54AOIIn+l8s44B8qHpH99QA==",
       "type": "package",
@@ -1556,6 +1596,27 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Text.Json/4.7.0": {
+      "sha512": "IPq/x/d5nAcnD3vIyM3AbPOaTgcqrh0AqPSx7U53UFu3M6k1TH1u/eXc9/h4jm/3mpP1WRUpevlPY4PACd7AWw==",
+      "type": "package",
+      "path": "system.text.json/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/net461/System.Text.Json.xml",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.4.7.0.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Threading.Tasks.Extensions/4.5.3": {
       "sha512": "+MvhNtcvIbqmhANyKu91jQnvIRVSTiaOiFNfKWwXGHG48YAb4I/TyH8spsySiPYla7gKal5ZnF3teJqZAximyQ==",
       "type": "package",
@@ -1602,6 +1663,7 @@
       "OpenTelemetry.Exporter.Jaeger >= 1.3.0-beta.1",
       "OpenTelemetry.Exporter.OpenTelemetryProtocol >= 1.3.0-beta.1",
       "OpenTelemetry.Exporter.Prometheus >= 1.3.0-beta.1",
+      "OpenTelemetry.Exporter.Zipkin >= 1.3.0-beta.1",
       "OpenTelemetry.Extensions.Hosting >= 1.0.0-rc9.3",
       "OpenTelemetry.Instrumentation.AspNetCore >= 1.0.0-rc9.3",
       "OpenTelemetry.Instrumentation.Http >= 1.0.0-rc9.3",
@@ -1677,6 +1739,10 @@
             "version": "[1.3.0-beta.1, )"
           },
           "OpenTelemetry.Exporter.Prometheus": {
+            "target": "Package",
+            "version": "[1.3.0-beta.1, )"
+          },
+          "OpenTelemetry.Exporter.Zipkin": {
             "target": "Package",
             "version": "[1.3.0-beta.1, )"
           },

@@ -51,3 +51,4 @@
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/NLog.Extensions.Logging.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/NLog.Web.AspNetCore.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Instrumentation.SqlClient.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Exporter.Zipkin.dll

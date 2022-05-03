@@ -37,10 +37,9 @@ builder.Services.AddOpenTelemetryTracing(b =>
     .AddHttpClientInstrumentation()
     .AddAspNetCoreInstrumentation()
     .AddSqlClientInstrumentation()
-    .AddOtlpExporter(opt =>
+    .AddZipkinExporter(opt =>
     {
-        opt.Endpoint = new Uri("http://10.100.158.8:4317");
-        opt.Protocol = OtlpExportProtocol.Grpc;
+        opt.Endpoint = new Uri("http://10.100.158.8:9411");
     });
 });
 
