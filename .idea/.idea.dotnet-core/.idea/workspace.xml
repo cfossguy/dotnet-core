@@ -8,9 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93c9fe5d-71a1-47e9-9239-2a51673b305e" name="Changes" comment="otel with zipkin.">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="93c9fe5d-71a1-47e9-9239-2a51673b305e" name="Changes" comment="oltp exporter">
       <change beforePath="$PROJECT_DIR$/dotnet-core/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/ref/dotnet-core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/ref/dotnet-core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/refint/dotnet-core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/refint/dotnet-core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651266823596</updated>
       <workItem from="1651266832278" duration="464000" />
-      <workItem from="1651268337397" duration="57413000" />
+      <workItem from="1651268337397" duration="57750000" />
     </task>
     <task id="LOCAL-00001" summary="workspace">
       <created>1651434252765</created>
@@ -154,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651617394449</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="oltp exporter">
+      <created>1651619797831</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651619797831</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +202,7 @@
     <MESSAGE value="changed roulette endpoint" />
     <MESSAGE value="added tempo tweaks." />
     <MESSAGE value="otel with zipkin." />
-    <option name="LAST_COMMIT_MESSAGE" value="otel with zipkin." />
+    <MESSAGE value="oltp exporter" />
+    <option name="LAST_COMMIT_MESSAGE" value="oltp exporter" />
   </component>
 </project>
