@@ -37,11 +37,12 @@ builder.Services.AddOpenTelemetryTracing(b =>
     .AddHttpClientInstrumentation()
     .AddAspNetCoreInstrumentation()
     .AddSqlClientInstrumentation()
-    .AddOtlpExporter(opt =>
+    .AddJaegerExporter(opt =>
     {
-        opt.Endpoint = new Uri("http://10.100.158.8:55678");
+        opt.Endpoint = new Uri("http://10.100.158.8:14250");
+        opt.Protocol = JaegerExportProtocol.HttpBinaryThrift;
         //opt.Protocol = OtlpExportProtocol.Grpc;
-        opt.Protocol = OtlpExportProtocol.HttpProtobuf;
+        //opt.Protocol = OtlpExportProtocol.HttpProtobuf;
     });
 });
 
