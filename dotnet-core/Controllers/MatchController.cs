@@ -29,7 +29,7 @@ namespace dotnet_core.Controllers
                 _logger.LogInformation("/slow 3rd party service returned {0} length string",rslt.Length);
                 return GetMockResponse(rslt.Length / 1000);
             }
-            return GetMockResponse(size);
+            return GetMockResponse(delay);
         }
         
         [Route("fast/{size:int}")] 
