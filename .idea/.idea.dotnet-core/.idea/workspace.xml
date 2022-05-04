@@ -8,7 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93c9fe5d-71a1-47e9-9239-2a51673b305e" name="Changes" comment="grpc" />
+    <list default="true" id="93c9fe5d-71a1-47e9-9239-2a51673b305e" name="Changes" comment="openconsensus">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +24,7 @@
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -108,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651266823596</updated>
       <workItem from="1651266832278" duration="464000" />
-      <workItem from="1651268337397" duration="58762000" />
+      <workItem from="1651268337397" duration="59564000" />
     </task>
     <task id="LOCAL-00001" summary="workspace">
       <created>1651434252765</created>
@@ -173,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651670375489</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="openconsensus">
+      <created>1651670812449</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651670812450</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +224,7 @@
     <MESSAGE value="oltp exporter" />
     <MESSAGE value="oltp2" />
     <MESSAGE value="grpc" />
-    <option name="LAST_COMMIT_MESSAGE" value="grpc" />
+    <MESSAGE value="openconsensus" />
+    <option name="LAST_COMMIT_MESSAGE" value="openconsensus" />
   </component>
 </project>
