@@ -37,15 +37,9 @@ builder.Services.AddOpenTelemetryTracing(b =>
     .AddHttpClientInstrumentation()
     .AddAspNetCoreInstrumentation()
     .AddSqlClientInstrumentation()
-    .AddJaegerExporter(opt =>
+    .AddZipkinExporter(opt =>
     {
-        
-        opt.AgentHost = "10.100.158.8";
-        opt.AgentPort = 9411;
-        //opt.Endpoint = new Uri("http://10.100.158.8:9411");
-        //opt.Protocol = JaegerExportProtocol.HttpBinaryThrift;
-        //opt.Protocol = OtlpExportProtocol.Grpc;
-        //opt.Protocol = OtlpExportProtocol.HttpProtobuf;
+        opt.Endpoint = new Uri("http://10.100.158.8:9411");
     });
     
 });
