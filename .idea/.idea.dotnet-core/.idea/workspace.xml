@@ -30,6 +30,7 @@
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -116,7 +117,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651266823596</updated>
       <workItem from="1651266832278" duration="464000" />
-      <workItem from="1651268337397" duration="66559000" />
+      <workItem from="1651268337397" duration="67308000" />
     </task>
     <task id="LOCAL-00001" summary="workspace">
       <created>1651434252765</created>
@@ -265,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651679926592</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="abc">
+      <created>1651681714821</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1651681714821</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
