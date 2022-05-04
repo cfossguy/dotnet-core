@@ -37,7 +37,6 @@ builder.Services.AddOpenTelemetryTracing(b =>
     .AddHttpClientInstrumentation()
     .AddAspNetCoreInstrumentation()
     .AddSqlClientInstrumentation()
-    .AddConsoleExporter()
     .AddJaegerExporter(opt =>
     {
         opt.Endpoint = new Uri("http://10.100.158.8:14268");
