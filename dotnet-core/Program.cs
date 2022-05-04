@@ -39,7 +39,7 @@ builder.Services.AddOpenTelemetryTracing(b =>
     .AddSqlClientInstrumentation()
     .AddOtlpExporter(opt =>
     {
-        opt.Endpoint = new Uri("http://10.100.158.8:14250");
+        opt.Endpoint = new Uri("http://10.100.158.8:4317");
         //opt.Protocol = OtlpExportProtocol.Grpc;
     });
 });
