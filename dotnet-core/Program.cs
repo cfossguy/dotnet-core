@@ -41,7 +41,7 @@ builder.Services.AddOpenTelemetryTracing(b =>
     {
         opt.Endpoint = new Uri("10.100.158.8:4317");
         //opt.Protocol = OtlpExportProtocol.Grpc;
-        //opt.Protocol = OtlpExportProtocol.HttpProtobuf;
+        opt.Protocol = OtlpExportProtocol.HttpProtobuf;
     });
 });
 
