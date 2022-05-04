@@ -19,7 +19,7 @@ builder.Host.UseNLog();
 
 var config = new NLog.Config.LoggingConfiguration();
 var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-config.AddRule(NLog.LogLevel.Info, NLog.LogLevel.Fatal, logconsole);
+config.AddRule(NLog.LogLevel.Trace, NLog.LogLevel.Fatal, logconsole);
 NLog.LogManager.Configuration = config;
 
 builder.Services.AddControllers();
@@ -37,13 +37,15 @@ builder.Services.AddOpenTelemetryTracing(b =>
     .AddHttpClientInstrumentation()
     .AddAspNetCoreInstrumentation()
     .AddSqlClientInstrumentation()
+    .AddConsoleExporter()
     .AddJaegerExporter(opt =>
     {
         opt.Endpoint = new Uri("http://10.100.158.8:14268");
-        opt.Protocol = JaegerExportProtocol.HttpBinaryThrift;
+        //opt.Protocol = JaegerExportProtocol.HttpBinaryThrift;
         //opt.Protocol = OtlpExportProtocol.Grpc;
         //opt.Protocol = OtlpExportProtocol.HttpProtobuf;
     });
+    
 });
 
 var app = builder.Build();
