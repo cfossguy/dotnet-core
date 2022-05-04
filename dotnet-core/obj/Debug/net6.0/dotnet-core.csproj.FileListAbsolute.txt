@@ -52,3 +52,13 @@
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/NLog.Web.AspNetCore.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Instrumentation.SqlClient.dll
 /Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/OpenTelemetry.Exporter.Zipkin.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/System.Net.Http.Formatting.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.WebApiCompatShim.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Microsoft.Azure.WebJobs.Host.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Microsoft.Azure.WebJobs.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Microsoft.Azure.WebJobs.Extensions.Http.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll

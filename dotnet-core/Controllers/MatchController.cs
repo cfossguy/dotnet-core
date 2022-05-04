@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using System.Text;
+using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_core.Controllers
 {
@@ -8,7 +8,7 @@ namespace dotnet_core.Controllers
     public class MatchController : ControllerBase
     {
         private readonly ILogger<MatchController> _logger;
-
+        
         public MatchController(ILogger<MatchController> logger)
         {
             _logger = logger;
@@ -16,12 +16,20 @@ namespace dotnet_core.Controllers
 
         [Route("slow/{size:int}/{delay:int}")] 
         [HttpGet] 
-        public string Slow(int size, int delay)
+        public async Task<string?> Slow(int size, int delay)
         {
             _logger.LogWarning(String.Format("/slow api that has a {0}ms delay",delay));
             Thread.Sleep(delay);
             _logger.LogInformation("/slow api that returns a fixed length string");
-            return getMockResponse(size);
+            
+            _logger.LogInformation("/slow making a call to 3rd party service");
+            var rslt = await Call3rdPartyAPI();
+            if (rslt != null && rslt.Length > 0)
+            {
+                _logger.LogInformation("/slow 3rd party service returned {0} length string",rslt.Length);
+                return GetMockResponse(rslt.Length / 1000);
+            }
+            return GetMockResponse(size);
         }
         
         [Route("fast/{size:int}")] 
@@ -29,7 +37,7 @@ namespace dotnet_core.Controllers
         public string Fast(int size)
         {
             _logger.LogInformation("/fast api that returns a fixed length string");
-            return getMockResponse(size);
+            return GetMockResponse(size);
         }
         
         [Route("roulette")] 
@@ -38,7 +46,7 @@ namespace dotnet_core.Controllers
         {
             Random rnd = new Random();
             int number   = rnd.Next(1, 14);   
-            Thread.Sleep(300);
+            Thread.Sleep(number * 50);
             _logger.LogWarning(String.Format("/roulette api wheel lands on {0}",number));
             
             if (number == 13)
@@ -47,7 +55,7 @@ namespace dotnet_core.Controllers
                 return StatusCode(500);
             }
             
-            return new OkObjectResult(new { message = getMockResponse(number), number = number });
+            return new OkObjectResult(new { message = GetMockResponse(number), number = number });
         }
         
         [Route("helloworld")] 
@@ -57,15 +65,43 @@ namespace dotnet_core.Controllers
             return "Helloworld-1.1...";
         }
         
-        private string getMockResponse(int s) {
+        private string GetMockResponse(int s) {
             string phrase = "All work and no play makes .netcore a slow API";
             string response = "";
-            for(int i=0; i<s; i++) {
+            Random rnd = new Random();
+            int number   = rnd.Next(1, s);   
+            for(int i=0; i<number; i++) {
                 response += phrase + "\n";
-                Thread.Sleep(10);
+                Thread.Sleep(number);
             }
 
             return response;
+        }
+
+        // GET: Products
+        private async Task<string?> Call3rdPartyAPI()
+        {
+            string apiUrl = "https://bumble.com";
+
+            using (HttpClient client=new HttpClient())
+            {
+                client.BaseAddress = new Uri(apiUrl);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("text/html"));
+
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+                if (response.IsSuccessStatusCode)
+                {
+                    var buffer = await response.Content.ReadAsStreamAsync();
+                    //Stream decompressed = new GZipStream(buffer, CompressionMode.Decompress);
+                    StreamReader objReader = new StreamReader(buffer, Encoding.UTF8);
+                    _logger.LogInformation("call to 3rd party API was successful");
+                    return objReader.ReadToEnd();
+                    
+                }
+                _logger.LogError("call to 3rd party API failed");
+                return null;
+            }
         }
     }
 }

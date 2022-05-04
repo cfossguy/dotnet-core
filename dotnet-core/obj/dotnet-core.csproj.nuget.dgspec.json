@@ -42,6 +42,14 @@
               "target": "Package",
               "version": "[2.46.0-pre2, )"
             },
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.8, )"
+            },
+            "Microsoft.Azure.WebJobs.Extensions.Http": {
+              "target": "Package",
+              "version": "[3.0.12, )"
+            },
             "NLog": {
               "target": "Package",
               "version": "[4.7.15, )"

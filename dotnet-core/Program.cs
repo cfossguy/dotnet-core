@@ -1,8 +1,5 @@
-using System.Net;
-using OpenTelemetry.Exporter;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
-using OpenTelemetry.Instrumentation;
 using Prometheus;
 using NLog;
 using NLog.Web;
