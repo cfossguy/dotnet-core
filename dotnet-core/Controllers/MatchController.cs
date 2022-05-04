@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_core.Controllers
@@ -63,7 +64,10 @@ namespace dotnet_core.Controllers
             string response = "";
             Random rnd = new Random();
             int number   = rnd.Next(1, s);   
+            
             for(int i=0; i<number; i++) {
+                var myActivitySource = new ActivitySource("dotnet-core");
+                using var activity = myActivitySource.StartActivity("bad code loop");
                 response += phrase + "\n";
                 Thread.Sleep(number);
             }
@@ -75,7 +79,8 @@ namespace dotnet_core.Controllers
         private async Task<string?> Call3rdPartyAPI()
         {
             string apiUrl = "https://bumble.com";
-
+            var myActivitySource = new ActivitySource("dotnet-core");
+            using var activity = myActivitySource.StartActivity("bumble");
             using (HttpClient client=new HttpClient())
             {
                 client.BaseAddress = new Uri(apiUrl);
@@ -89,9 +94,12 @@ namespace dotnet_core.Controllers
                     //Stream decompressed = new GZipStream(buffer, CompressionMode.Decompress);
                     StreamReader objReader = new StreamReader(buffer, Encoding.UTF8);
                     _logger.LogInformation("call to 3rd party API was successful");
+                    
                     return objReader.ReadToEnd();
                     
                 }
+                activity?.SetTag("http.status_code", response.StatusCode);
+                activity?.SetTag("http.route", apiUrl);
                 _logger.LogError("call to 3rd party API failed");
                 return null;
             }
