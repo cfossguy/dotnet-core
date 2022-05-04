@@ -9,14 +9,9 @@ export let options = {
 };
 
 export default function () {
-    http.get('http://35.188.223.237/Match/slow/100/200');
-    http.get('http://35.188.223.237/Match/slow/50/400');
-    http.get('http://35.188.223.237/Match/slow/25/500');
-    http.get('http://35.188.223.237/Match/fast/100');
-    http.get('http://35.188.223.237/Match/fast/90');
-    http.get('http://35.188.223.237/Match/fast/80');
-    http.get('http://35.188.223.237/Match/fast/70');
-    http.get('http://35.188.223.237/Match/fast/60');
+    http.get('http://35.188.223.237/Match/slow/500');
+    http.get('http://35.188.223.237/Match/slow/400');
+    http.get('http://35.188.223.237/Match/slow/300');
     http.get('http://35.188.223.237/Match/fast/50');
     http.get('http://35.188.223.237/Match/fast/30');
     http.get('http://35.188.223.237/Match/fast/20');

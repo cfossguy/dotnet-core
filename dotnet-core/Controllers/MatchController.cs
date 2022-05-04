@@ -14,9 +14,9 @@ namespace dotnet_core.Controllers
             _logger = logger;
         }
 
-        [Route("slow/{size:int}/{delay:int}")] 
+        [Route("slow/{delay:int}")] 
         [HttpGet] 
-        public async Task<string?> Slow(int size, int delay)
+        public async Task<string?> Slow(int delay)
         {
             _logger.LogWarning(String.Format("/slow api that has a {0}ms delay",delay));
             Thread.Sleep(delay);
@@ -39,32 +39,25 @@ namespace dotnet_core.Controllers
             _logger.LogInformation("/fast api that returns a fixed length string");
             return GetMockResponse(size);
         }
-        
-        [Route("roulette")] 
-        [HttpGet] 
+
+        [Route("roulette")]
+        [HttpGet]
         public IActionResult Roulette()
         {
             Random rnd = new Random();
-            int number   = rnd.Next(1, 14);   
+            int number = rnd.Next(1, 14);
             Thread.Sleep(number * 50);
-            _logger.LogWarning(String.Format("/roulette api wheel lands on {0}",number));
-            
+            _logger.LogWarning(String.Format("/roulette api wheel lands on {0}", number));
+
             if (number == 13)
             {
                 _logger.LogError("/roulette api says you have very bad luck!");
                 return StatusCode(500);
             }
-            
-            return new OkObjectResult(new { message = GetMockResponse(number), number = number });
+
+            return new OkObjectResult(new {message = GetMockResponse(number), number = number});
         }
-        
-        [Route("helloworld")] 
-        [HttpGet] 
-        public string Helloworld()
-        {
-            return "Helloworld-1.1...";
-        }
-        
+
         private string GetMockResponse(int s) {
             string phrase = "All work and no play makes .netcore a slow API";
             string response = "";
