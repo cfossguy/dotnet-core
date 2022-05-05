@@ -5,12 +5,12 @@
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
-        "hide": true,
+        "hide": false,
         "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
+        "name": "Annotations ",
         "target": {
           "limit": 100,
-          "matchAny": false,
+          "matchAny": true,
           "tags": [
             "dotnet-core"
           ],
@@ -34,7 +34,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 103,
-  "iteration": 1651357019645,
+  "iteration": 1651760967642,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -113,16 +113,19 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
-        "w": 10,
+        "h": 10,
+        "w": 8,
         "x": 0,
         "y": 1
       },
       "id": 4,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
           "placement": "bottom"
         },
         "tooltip": {
@@ -145,17 +148,17 @@
           "refId": "A"
         }
       ],
-      "title": "Prometheus: .NET Core: Requests Per Minute",
+      "title": "Prometheus: Requests Per Minute",
       "transformations": [
         {
           "id": "filterFieldsByName",
           "options": {
             "include": {
               "names": [
+                "Time",
                 "match/fast/{size:int}",
                 "match/roulette",
-                "match/slow/{size:int}/{delay:int}",
-                "Time"
+                "match/slow/{delay:int}"
               ]
             }
           }
@@ -172,9 +175,36 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "continuous-GrYlRd"
+            "mode": "palette-classic"
           },
-          "decimals": 0,
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -182,32 +212,33 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 1000
               }
             ]
-          },
-          "unit": "none"
+          }
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 6,
         "w": 7,
-        "x": 10,
+        "x": 8,
         "y": 1
       },
-      "id": 5,
+      "id": 43,
       "options": {
-        "displayMode": "basic",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
         },
-        "showUnfilled": true,
-        "text": {}
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
       },
       "pluginVersion": "8.5.0-52039pre",
       "targets": [
@@ -225,39 +256,38 @@
           "refId": "A"
         }
       ],
-      "title": "Prometheus: .NET Core: 95th Percentile Response Time ",
+      "title": "Prometheus: 95th Percentile Response Time",
       "transformations": [
         {
           "id": "filterFieldsByName",
           "options": {
             "include": {
               "names": [
+                "Time",
                 "match/fast/{size:int} ",
                 "match/roulette ",
-                "match/slow/{size:int}/{delay:int} ",
-                "Time"
+                "match/slow/{delay:int} "
               ]
             }
           }
         }
       ],
-      "type": "bargauge"
+      "type": "timeseries"
     },
     {
       "datasource": {
         "type": "prometheus",
         "uid": "grafanacloud-prom"
       },
-      "description": "API request average ",
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "fixedColor": "dark-blue",
-            "mode": "fixed"
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "green",
@@ -265,23 +295,32 @@
               },
               {
                 "color": "red",
-                "value": 80
+                "value": 0.8
+              },
+              {
+                "color": "#EAB839",
+                "value": 0.9
+              },
+              {
+                "color": "green",
+                "value": 1
               }
             ]
-          }
+          },
+          "unit": "percentunit"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 17,
+        "h": 6,
+        "w": 3,
+        "x": 15,
         "y": 1
       },
       "id": 23,
       "options": {
-        "colorMode": "none",
-        "graphMode": "area",
+        "colorMode": "background",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -291,10 +330,7 @@
           "fields": "",
           "values": false
         },
-        "text": {
-          "titleSize": 1
-        },
-        "textMode": "value"
+        "textMode": "auto"
       },
       "pluginVersion": "8.5.0-52039pre",
       "targets": [
@@ -304,22 +340,217 @@
             "uid": "grafanacloud-prom"
           },
           "exemplar": true,
-          "expr": "sum(rate(http_request_duration_seconds_count{app=\"dotnet-core\"}[1m])) * 60 ",
+          "expr": "clamp_max(sum by (app) (up{app=\"dotnet-core\",cluster=\"development\", job=\"integrations/dotnet-core\"}),1) or on() vector(0)",
           "format": "time_series",
+          "hide": false,
           "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "title": "Prometheus: API Availability",
+      "transformations": [
+        {
+          "id": "merge",
+          "options": {}
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "grafanacloud-prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 2
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 18,
+        "y": 1
+      },
+      "id": 53,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.5.0-52039pre",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "grafanacloud-prom"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{app=\"dotnet-core\"}[1m])) by (app,le)) * 1000",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Prometheus: .NET Core: API Throughput",
+      "title": "Prometheus: 95th Latency ",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {}
+        }
+      ],
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "grafanacloud-prom"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
-        "h": 8,
-        "w": 11,
-        "x": 10,
-        "y": 5
+        "h": 6,
+        "w": 7,
+        "x": 8,
+        "y": 7
+      },
+      "id": 5,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.5.0-52039pre",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "grafanacloud-prom"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket{app=\"dotnet-core\"}[1m])) by (endpoint,le)) * 1000",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{endpoint}} ",
+          "refId": "A"
+        }
+      ],
+      "title": "Prometheus: 99th Percentile Response Time ",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "Time",
+                "match/fast/{size:int} ",
+                "match/roulette ",
+                "match/slow/{delay:int} "
+              ]
+            }
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "gridPos": {
+        "h": 12,
+        "w": 6,
+        "x": 15,
+        "y": 7
       },
       "id": 20,
       "options": {
@@ -441,16 +672,19 @@
         ]
       },
       "gridPos": {
-        "h": 6,
-        "w": 10,
+        "h": 8,
+        "w": 8,
         "x": 0,
-        "y": 7
+        "y": 11
       },
       "id": 8,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
           "placement": "bottom"
         },
         "tooltip": {
@@ -482,7 +716,7 @@
           "visible": true
         }
       ],
-      "title": "Prometheus: .NET Core: Error Rate Per Minute",
+      "title": "Prometheus: Error Rate",
       "transformations": [
         {
           "id": "filterFieldsByName",
@@ -491,6 +725,114 @@
               "names": [
                 "match/roulette ",
                 "Time"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "grafanacloud-prom"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 7,
+        "x": 8,
+        "y": 13
+      },
+      "id": 44,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.5.0-52039pre",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "grafanacloud-prom"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket{app=\"dotnet-core\"}[1m])) by (endpoint,le)) * 1000",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{endpoint}} ",
+          "refId": "A"
+        }
+      ],
+      "title": "Prometheus: 50th Percentile Response Time ",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "Time",
+                "match/fast/{size:int} ",
+                "match/roulette ",
+                "match/slow/{delay:int} "
               ]
             }
           }
@@ -530,7 +872,7 @@
         "h": 4,
         "w": 21,
         "x": 0,
-        "y": 13
+        "y": 19
       },
       "id": 25,
       "options": {
@@ -573,7 +915,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 17
+        "y": 23
       },
       "id": 42,
       "options": {
@@ -605,7 +947,283 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 30
+      },
+      "id": 47,
+      "panels": [
+        {
+          "datasource": {
+            "type": "grafana-jira-datasource",
+            "uid": "2lDU1MBnz"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto",
+                "filterable": true
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Sprint Name"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 120
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Summary"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 285
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Status Name"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 142
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 16,
+            "x": 0,
+            "y": 31
+          },
+          "id": 51,
+          "libraryPanel": {
+            "description": "",
+            "meta": {
+              "connectedDashboards": 1,
+              "created": "2022-05-04T16:50:17Z",
+              "createdBy": {
+                "avatarUrl": "/avatar/fd773eabbeba707949c0a92b7b867783",
+                "id": 4,
+                "name": "jameswilliams1"
+              },
+              "folderName": "Applications",
+              "folderUid": "qnOJ5MBnz",
+              "updated": "2022-05-05T13:49:31Z",
+              "updatedBy": {
+                "avatarUrl": "/avatar/fd773eabbeba707949c0a92b7b867783",
+                "id": 4,
+                "name": "jameswilliams1"
+              }
+            },
+            "name": "JIRA: Overdue Sprint Deliverables Table",
+            "type": "table",
+            "uid": "q-wCydl7z",
+            "version": 2
+          },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "Show Details",
+              "url": "https://jira-jwilliams.atlassian.net/jira/software/projects/AS/boards/1"
+            }
+          ],
+          "options": {
+            "footer": {
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "8.5.0-52039pre",
+          "targets": [
+            {
+              "datasource": {
+                "type": "grafana-jira-datasource",
+                "uid": "2lDU1MBnz"
+              },
+              "domain": "issues",
+              "fields": [
+                {
+                  "custom": "com.pyxis.greenhopper.jira:gh-sprint",
+                  "items": "json",
+                  "label": "Sprint Name",
+                  "system": "",
+                  "text": "Sprint Name",
+                  "type": "array",
+                  "value": "customfield_10020.name"
+                },
+                {
+                  "custom": "",
+                  "items": "",
+                  "label": "Summary",
+                  "system": "summary",
+                  "text": "Summary",
+                  "type": "string",
+                  "value": "summary"
+                },
+                {
+                  "custom": "",
+                  "items": "",
+                  "label": "Status Name",
+                  "system": "status",
+                  "text": "Status Name",
+                  "type": "status",
+                  "value": "status.name"
+                },
+                {
+                  "custom": "",
+                  "items": "",
+                  "label": "Assignee Name",
+                  "system": "assignee",
+                  "text": "Assignee Name",
+                  "type": "user",
+                  "value": "assignee.displayName"
+                }
+              ],
+              "jql": "due < Now() AND status != \"Done\"",
+              "queryType": "",
+              "refId": "A"
+            }
+          ],
+          "title": "JIRA: Overdue Sprint Deliverables",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "grafanacloud-prom"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "continuous-GrYlRd"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "scheme",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineWidth": 3,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 5,
+            "x": 16,
+            "y": 31
+          },
+          "id": 49,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "grafanacloud-prom"
+              },
+              "exemplar": true,
+              "expr": "Overdue_JIRA_Deliverables",
+              "instant": false,
+              "interval": "",
+              "legendFormat": "{{name}}",
+              "refId": "A"
+            }
+          ],
+          "title": "JIRA: Overdue Sprint Deliverables ",
+          "type": "timeseries"
+        }
+      ],
+      "title": "ITL",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 31
       },
       "id": 12,
       "panels": [
@@ -668,7 +1286,7 @@
             "h": 6,
             "w": 7,
             "x": 0,
-            "y": 21
+            "y": 9
           },
           "id": 31,
           "links": [],
@@ -763,7 +1381,7 @@
             "h": 6,
             "w": 7,
             "x": 7,
-            "y": 21
+            "y": 9
           },
           "id": 16,
           "options": {
@@ -789,7 +1407,7 @@
               "instant": false,
               "interval": "",
               "intervalFactor": 10,
-              "legendFormat": "instance",
+              "legendFormat": "{{instance}}",
               "refId": "A"
             }
           ],
@@ -855,7 +1473,7 @@
             "h": 6,
             "w": 7,
             "x": 14,
-            "y": 21
+            "y": 9
           },
           "id": 38,
           "options": {
@@ -941,22 +1559,124 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "none"
             },
             "overrides": []
           },
           "gridPos": {
-            "h": 11,
+            "h": 8,
             "w": 7,
             "x": 0,
-            "y": 27
+            "y": 15
           },
           "id": 40,
           "links": [],
           "options": {
             "legend": {
-              "calcs": [],
-              "displayMode": "hidden",
+              "calcs": [
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "8.3.0-36021pre",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "grafanacloud-prom"
+              },
+              "exemplar": true,
+              "expr": "sum by(container) (rate(container_cpu_usage_seconds_total{cluster=\"development\",namespace=\"default\",container=\"dotnet-core\"}[$__interval]))",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{container}}",
+              "refId": "A",
+              "step": 10
+            }
+          ],
+          "title": "K8s: CPU Usage",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "grafanacloud-prom"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 100,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 0,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 7,
+            "x": 7,
+            "y": 15
+          },
+          "id": 45,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
               "placement": "bottom"
             },
             "tooltip": {
@@ -1042,107 +1762,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 11,
-            "w": 7,
-            "x": 7,
-            "y": 27
-          },
-          "id": 33,
-          "links": [],
-          "options": {
-            "legend": {
-              "calcs": [
-                "mean",
-                "max",
-                "min"
-              ],
-              "displayMode": "table",
-              "placement": "bottom"
-            },
-            "tooltip": {
-              "mode": "single",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "8.3.0-36021pre",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "grafanacloud-prom"
-              },
-              "exemplar": true,
-              "expr": "avg(irate(container_network_transmit_bytes_total{cluster=\"$cluster\", namespace=~\".+\"}[$__rate_interval])) by (namespace)",
-              "interval": "",
-              "legendFormat": "{{namespace}}",
-              "refId": "A"
-            }
-          ],
-          "title": "K8s: Average Container Bandwidth by Namespace: Transmitted",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "grafanacloud-prom"
-          },
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 100,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 0,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "normal"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "Bps"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 11,
+            "h": 8,
             "w": 7,
             "x": 14,
-            "y": 27
+            "y": 15
           },
           "id": 35,
           "links": [],
@@ -1183,7 +1806,7 @@
       "type": "row"
     }
   ],
-  "refresh": false,
+  "refresh": "",
   "schemaVersion": 35,
   "style": "dark",
   "tags": [],
@@ -1218,13 +1841,13 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Cloud Native Forensics - dotnet-core",
   "uid": "Hw7lGqQ7k",
-  "version": 27,
+  "version": 105,
   "weekStart": ""
 }
