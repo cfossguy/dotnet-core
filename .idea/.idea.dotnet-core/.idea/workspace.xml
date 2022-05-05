@@ -11,6 +11,10 @@
     <list default="true" id="93c9fe5d-71a1-47e9-9239-2a51673b305e" name="Changes" comment="1.1.3pre">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dotnet-core/Controllers/MatchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/Controllers/MatchController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/jwilliams/RiderProjects/dotnet-core/dotnet-core/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -122,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651266823596</updated>
       <workItem from="1651266832278" duration="464000" />
-      <workItem from="1651268337397" duration="81115000" />
+      <workItem from="1651268337397" duration="84986000" />
     </task>
     <task id="LOCAL-00001" summary="workspace">
       <created>1651434252765</created>
@@ -327,7 +332,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651706745545</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="1.1.3pre">
+      <created>1651707882343</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1651707882345</updated>
+    </task>
+    <task id="LOCAL-00031" summary="1.1.3pre">
+      <created>1651710447226</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1651710447226</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

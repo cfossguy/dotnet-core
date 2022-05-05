@@ -16,7 +16,8 @@ builder.Host.UseNLog();
 
 var config = new NLog.Config.LoggingConfiguration();
 var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-config.AddRule(NLog.LogLevel.Trace, NLog.LogLevel.Fatal, logconsole);
+config.AddRule(NLog.LogLevel.Info, NLog.LogLevel.Fatal, logconsole);
+
 NLog.LogManager.Configuration = config;
 
 builder.Services.AddControllers();
