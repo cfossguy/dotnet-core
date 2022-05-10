@@ -19,13 +19,13 @@
         "type": "dashboard"
       },
       {
-        "datasource": "grafanacloud-sejwilliams-logs",
+        "datasource": "$datasource",
         "enable": false,
         "expr": "{app=\"dotnet-core\"} |= \"|ERROR|\"",
         "iconColor": "red",
         "name": "Log Error",
         "target": {
-          "projectName": "solutions-engineering-248511"
+          "projectName": "$projectName"
         }
       }
     ]
@@ -34,7 +34,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 103,
-  "iteration": 1651760967642,
+  "iteration": 1652225530034,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -290,7 +290,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "dark-red",
                 "value": null
               },
               {
@@ -1848,6 +1848,6 @@
   "timezone": "",
   "title": "Cloud Native Forensics - dotnet-core",
   "uid": "Hw7lGqQ7k",
-  "version": 105,
+  "version": 108,
   "weekStart": ""
 }

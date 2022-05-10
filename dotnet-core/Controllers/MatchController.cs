@@ -19,8 +19,8 @@ namespace dotnet_core.Controllers
         [HttpGet] 
         public async Task<string?> Slow(int delay)
         {
-            //_logger.LogWarning(String.Format("/slow api that has a {1}ms delay traceID={0}", Activity.Current.RootId,delay));
-            //Thread.Sleep(delay);
+            _logger.LogWarning(String.Format("/slow api that has a {1}ms delay traceID={0}", Activity.Current.RootId,delay));
+            Thread.Sleep(delay);
             
             _logger.LogInformation("/slow api that returns a fixed length string traceID={0}",Activity.Current.RootId);
             
