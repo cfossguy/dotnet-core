@@ -108,4 +108,4 @@ jobs:
           sessionAffinity: None
           type: LoadBalancer
         EOF
-        kubectl apply -f ./release-deployment.yaml; kubectl rollout restart deployment dotnet-core-api;
+        kubectl apply -f ./release-deployment.yaml; kubectl rollout restart deployment dotnet-core-api -n dotnet-core;
