@@ -55,24 +55,25 @@ jobs:
         kind: Deployment
         metadata:
           labels:
-            app: dotnet-core
-          name: dotnet-core
+            app: dotnet-core-api
+          name: dotnet-core-api
+          namespace: dotnet-core
         spec:
           replicas: 3
           selector:
             matchLabels:
-              app: dotnet-core
+              app: dotnet-core-api
           strategy: {}
           template:
             metadata:
               creationTimestamp: null
               labels:
-                app: dotnet-core
+                app: dotnet-core-api
             spec:
               containers:
                 - image: us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:$RELEASE_VERSION
                   imagePullPolicy: Always
-                  name: dotnet-core
+                  name: dotnet-core-api
                   ports:
                     - containerPort: 80
                   resources: {}
@@ -86,8 +87,8 @@ jobs:
           finalizers:
             - service.kubernetes.io/load-balancer-cleanup
           labels:
-            app: dotnet-core
-          name: dotnet-core
+            app: dotnet-core-api
+          name: dotnet-core-api
           namespace: default
         spec:
           externalTrafficPolicy: Cluster
@@ -96,8 +97,8 @@ jobs:
               protocol: TCP
               targetPort: 80
           selector:
-            app: dotnet-core
+            app: dotnet-core-api
           sessionAffinity: None
           type: LoadBalancer
         EOF
-        kubectl apply -f ./release-deployment.yaml; kubectl rollout restart deployment dotnet-core;
+        kubectl apply -f ./release-deployment.yaml; kubectl rollout restart deployment dotnet-core-api;

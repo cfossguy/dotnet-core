@@ -30,6 +30,7 @@ jobs:
           kind: CronJob
           metadata:
             name: k6-loadgen-dotnet-core
+            namespace: dotnet-core
           spec:
             schedule: "*/15 * * * *"
             jobTemplate:

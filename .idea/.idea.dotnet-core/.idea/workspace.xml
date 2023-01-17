@@ -9,28 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93c9fe5d-71a1-47e9-9239-2a51673b305e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/variables/myvars.env" beforeDir="false" afterPath="$PROJECT_DIR$/.github/variables/myvars.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-core/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/Controllers/MatchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/Controllers/MatchController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/dotnet-core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/dotnet-core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/dotnet-core.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/ref/dotnet-core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/ref/dotnet-core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/refint/dotnet-core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/Debug/net6.0/refint/dotnet-core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/dotnet-core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/dotnet-core.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/dotnet-core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/dotnet-core.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-core/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-core/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grafana-dashboard.json" beforeDir="false" afterPath="$PROJECT_DIR$/grafana-dashboard.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +110,8 @@
       <workItem from="1651759267631" duration="7625000" />
       <workItem from="1651773071687" duration="375000" />
       <workItem from="1651773606498" duration="665000" />
-      <workItem from="1651774404309" duration="2475000" />
+      <workItem from="1651774404309" duration="3119000" />
+      <workItem from="1673990332898" duration="796000" />
     </task>
     <task id="LOCAL-00001" summary="workspace">
       <created>1651434252765</created>
@@ -377,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651769990295</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="readme file updates.">
+      <created>1652226905655</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1652226905655</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +417,8 @@
     <MESSAGE value="1.1.4pre" />
     <MESSAGE value="1.1.3pre" />
     <MESSAGE value="1.1.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.1.4" />
+    <MESSAGE value="readme file updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="readme file updates." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
