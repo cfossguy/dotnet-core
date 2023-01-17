@@ -49,6 +49,7 @@ jobs:
         docker push us-central1-docker.pkg.dev/solutions-engineering-248511/se-jwilliams-sandbox/dotnet-core:$RELEASE_VERSION
     - name: Deploy to GKE
       run: |-
+        gcloud --quiet auth configure-docker
         gcloud container clusters get-credentials jwilliams-demo-cluster --zone $GKE_ZONE --project $PROJECT_ID
         cat <<EOF >release-deployment.yaml
         apiVersion: apps/v1
@@ -89,7 +90,7 @@ jobs:
           labels:
             app: dotnet-core-api
           name: dotnet-core-api
-          namespace: default
+          namespace: dotnet-core
         spec:
           externalTrafficPolicy: Cluster
           ports:
